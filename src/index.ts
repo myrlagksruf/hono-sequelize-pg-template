@@ -5,11 +5,10 @@ import { serveStatic } from 'hono/bun'
 import { validator } from 'hono/validator'
 import { logger } from 'hono/logger'
 import { appendFileSync } from 'node:fs'
-
-
 import path from 'node:path'
 import api from './api'
 import page from './page'
+import { sequelize } from './db'
 
 const customLog = (message: string, ...rest: string[]) => {
     const date = new Date()
