@@ -5,7 +5,7 @@ try{
     await sequelize.authenticate()
     await Person.create({
         name:'김한결',
-        person_id:'940803-1200714',
+        person_id:'940803-1******',
     })
 } catch(err){
     console.error(err)

@@ -1,17 +1,19 @@
-const Layout = (props: { children?: any }) => {
+import type { FC } from "hono/jsx"
+
+const Layout:FC<{ children?: JSX.Element[]|JSX.Element }> = ({children}) => {
     return (
         <html>
-            <body>{props.children}</body>
+            <body>{children}</body>
         </html>
     )
 }
 
-export const Top = (props: { messages: string[] }) => {
+export const Top:FC<{ messages: string[] }> = ({messages}) => {
     return (
         <Layout>
             <h1>Hello Hono!</h1>
             <ul>
-                {props.messages.map((message) => {
+                {messages.map((message) => {
                     return <li>{message}!!</li>
                 })}
             </ul>
